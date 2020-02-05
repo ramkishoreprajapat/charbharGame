@@ -1,3 +1,5 @@
 class AppFonts {
- static var fontHarabaraMaisDemo = 'HarabaraMaisDemo';
+ static var harabaraMaisDemo = 'HarabaraMaisDemo';
+ static var gothamRoundedMedium = 'GothamRounded-Medium';
+ static var pointDEMOSemiBold = 'PointDEMOSemiBold';
 }

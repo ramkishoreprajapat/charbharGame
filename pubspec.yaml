@@ -59,6 +59,14 @@ flutter:
     - family: HarabaraMaisDemo
       fonts:
         - asset: fonts/HarabaraMaisDemo.otf
+
+    - family: GothamRounded-Medium
+      fonts:
+        - asset: fonts/GothamRounded-Medium.otf
+
+    - family: PointDEMOSemiBold
+      fonts:
+        - asset: fonts/PointDEMOSemiBold.otf
   # fonts:
   #   - family: Schyler
   #     fonts:
