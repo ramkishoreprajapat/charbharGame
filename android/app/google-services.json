@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "230661732148",
+    "firebase_url": "https://charbhar-3a7c4.firebaseio.com",
+    "project_id": "charbhar-3a7c4",
+    "storage_bucket": "charbhar-3a7c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230661732148:android:79ef22135f08329c1f9761",
+        "android_client_info": {
+          "package_name": "game.charbhar.charbhar_game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230661732148-mmajmngpcej7e7h1p0i7pa1oj7fu6gf2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "game.charbhar.charbhar_game",
+            "certificate_hash": "6622bef05385beaaf9f23e08556644e69d4e798d"
+          }
+        },
+        {
+          "client_id": "230661732148-bc8evu1bd66ik8s7dfnvheuciiabiolv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAZERoqX8j4C2AnyV5VnC8Owt-QR63cgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230661732148-bc8evu1bd66ik8s7dfnvheuciiabiolv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

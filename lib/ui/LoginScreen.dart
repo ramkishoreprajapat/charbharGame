@@ -1,6 +1,8 @@
 import 'package:charbhar_game/Constants/AppColors.dart';
 import 'package:charbhar_game/Constants/AppStrings.dart';
 import 'package:charbhar_game/Constants/AppFonts.dart';
+import 'package:charbhar_game/Widgets/CustomButton.dart';
+import 'package:charbhar_game/ui/OptionScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -93,51 +95,28 @@ class _LoginScreenState extends State<LoginScreen>
             new SizedBox(
               height: 30,
             ),
-            new Container(
-              height: 50.0,
-              width: 250.0,
-              child: Stack(
-                children: <Widget>[
-                  new Container(
-                    height: 40.0,
-                    margin: EdgeInsets.only(left: 2, top: 5),
-                    decoration: BoxDecoration(
-                      color: Colors.white10,
-                      border: Border.all(color: AppColors.colorWhite, width: 1.0),
-                      borderRadius: new BorderRadius.circular(25.0),
-                    ),
-                  ),
-                  new Image.asset(
-                    "assets/images/drop.png",
-                    width: 50,
-                    height: 50,
-                  ),
-                  new Positioned(
-                    left: 10,
-                    top: 11,
-                    child: Image.asset(
-                      "assets/images/user.png",
-                      width: 20,
-                      height: 20,
-                    ),
-                  ),
-                  new Positioned(
-                    left: 110.0,
-                    top: 15,
-                    child: Container(
-                      child:  Text(
-                        AppStrings.guest,
-                        style: TextStyle(
-                            fontFamily: AppFonts.pointDEMOSemiBold,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.colorWhite),
-                        textAlign: TextAlign.center,
-                      ),
-                    )
-                  )
-                ],
+            new GestureDetector(
+              child: new Container(
+                height: 50.0,
+                width: 250.0,
+                child: new CustomButton(str:AppStrings.guest, imgPath: 'assets/images/user.png',),
               ),
+                onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => OptionScreen()))
+            ),
+            new SizedBox(
+              height: 5,
+            ),
+            new Container(
+                height: 50.0,
+                width: 250.0,
+                child: new CustomButton(str:AppStrings.google, imgPath: 'assets/images/google.png',)
+            ),new SizedBox(
+              height: 5,
+            ),
+            new Container(
+                height: 50.0,
+                width: 250.0,
+                child: new CustomButton(str:AppStrings.facebook, imgPath: 'assets/images/facebook.png',)
             )
           ],
         ),
