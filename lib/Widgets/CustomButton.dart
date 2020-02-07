@@ -24,27 +24,32 @@ class CustomButton extends StatelessWidget {
           width: 50,
           height: 50,
         ),
-        new Positioned(
-          left: 10,
-          top: 11,
-          child: Image.asset(
-            imgPath,
-            width: 20,
-            height: 20,
+          new Positioned(
+            width: 42,
+          height: 50,
+          child: Align(
+            alignment: Alignment.center,
+            child: Image.asset(
+              imgPath,
+              width: 20,
+              height: 20,
+            ),
           ),
         ),
         new Positioned(
-            left: 110.0,
-            top: 15,
-            child: Container(
-              child: Text(
-                str??'',
-                style: TextStyle(
-                    fontFamily: AppFonts.pointDEMOSemiBold,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.colorWhite),
-                textAlign: TextAlign.center,
+           width: 250,
+            height: 50,
+            child: Align(
+              child: Container(
+                child: Text(
+                  str ?? '',
+                  style: TextStyle(
+                      fontFamily: AppFonts.pointDEMOSemiBold,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.colorWhite),
+                  textAlign: TextAlign.center,
+                ),
               ),
             ))
       ],
