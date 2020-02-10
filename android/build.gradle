@@ -19,6 +19,8 @@ allprojects {
         jcenter()
     }
 }
+// ADD THIS AT THE BOTTOM
+//apply plugin: 'com.google.gms.google-services'
 
 rootProject.buildDir = '../build'
 subprojects {
@@ -31,5 +33,3 @@ subprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-// ADD THIS AT THE BOTTOM
-apply plugin: 'com.google.gms.google-services'
