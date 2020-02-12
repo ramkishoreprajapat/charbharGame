@@ -12,7 +12,7 @@ class PlayGame extends StatefulWidget {
 }
 
 class _PlayGameState extends State<PlayGame> {
-  List<GB> buttonList;
+  List<GB> mList;
   var player1;
   var player2;
   var activePlayer;
@@ -26,7 +26,7 @@ class _PlayGameState extends State<PlayGame> {
 
     /*Hiding status bar*/
     SystemChrome.setEnabledSystemUIOverlays([]);
-    buttonList = doInit();
+    mList = doInit();
   }
 
   List<GB> doInit() {
@@ -38,7 +38,7 @@ class _PlayGameState extends State<PlayGame> {
     player1Keys = Utility.getKeys('assets/images/theme_1_3.jpg');
     player2Keys = Utility.getKeys('assets/images/theme_1_4.jpg');
 
-    var gameButtons = <GB>[
+    var tempList = <GB>[
       GB(id: 1, type: AppConstant.SLOT, bgImage: 'assets/images/theme_1_2.jpg'),
       GB(id: 2, type: AppConstant.BG_SLOT, bgImage: 'assets/images/theme_1_1.jpg'),
       GB(id: 3, type: AppConstant.BG_SLOT, bgImage: 'assets/images/theme_1_1.jpg'),
@@ -210,7 +210,7 @@ class _PlayGameState extends State<PlayGame> {
       GB(id: 169, type: AppConstant.SLOT, bgImage: 'assets/images/theme_1_2.jpg'),
     ];
 
-    return gameButtons;
+    return tempList;
   }
 
   playGame(GB gb) {
@@ -221,29 +221,136 @@ class _PlayGameState extends State<PlayGame> {
             && playingStatus == AppConstant.NOT_STARTED) {
 
           if (activePlayer == 1) {
-            activePlayer = 2;
             player1.add(gb.id);
             gb.status = AppConstant.PLAYER_1_SLOT;
             gb.bgImage = 'assets/images/theme_1_3.jpg';
 
-            if(player1Keys.length > 0)
-            player1Keys.removeAt(0);
+            if(player1Keys.length > 0) {
+              player1Keys.removeAt(0);
+            }
+
+            checkLogic(gb);
+            activePlayer = 2;
           } else {
-            activePlayer = 1;
+
             player2.add(gb.id);
             gb.status = AppConstant.PLAYER_2_SLOT;
             gb.bgImage = 'assets/images/theme_1_4.jpg';
-            if(player2Keys.length > 0)
+            if(player2Keys.length > 0) {
               player2Keys.removeAt(0);
+            }
           }
+
           //game started now
           if(player1Keys.length == 0 && player2Keys.length == 0){
             playingStatus = AppConstant.STARTED;
           }
+
+          checkLogic(gb);
+          activePlayer = 1;
         }
     });
   }
 
+  void checkLogic(GB gb) {
+    var id = gb.id;
+    var whichPlayer = gb.status;
+
+    if(id == 1 && mList[79-1].status == whichPlayer && mList[157-1].status == whichPlayer){
+
+    } else if (id == 1 && mList[7-1].status == whichPlayer && mList[13-1].status == whichPlayer) {
+      
+    } else if(id == 7 && mList[1-1].status == whichPlayer && mList[13-1].status == whichPlayer){
+
+    } else if(id == 7 && mList[33-1].status == whichPlayer && mList[59-1].status == whichPlayer){
+
+    } else if(id == 13 && mList[7-1].status == whichPlayer && mList[1-1].status == whichPlayer){
+
+    } else if(id == 13 && mList[91-1].status == whichPlayer && mList[169-1].status == whichPlayer){
+
+    } else if(id == 91 && mList[13-1].status == whichPlayer && mList[169-1].status == whichPlayer){
+
+    } else if(id == 91 && mList[89-1].status == whichPlayer && mList[87-1].status == whichPlayer){
+
+    } else if(id == 169 && mList[91-1].status == whichPlayer && mList[13-1].status == whichPlayer){
+
+    } else if(id == 169 && mList[163-1].status == whichPlayer && mList[157-1].status == whichPlayer){
+
+    } else if(id == 163 && mList[169-1].status == whichPlayer && mList[157-1].status == whichPlayer){
+
+    } else if(id == 163 && mList[137-1].status == whichPlayer && mList[111-1].status == whichPlayer){
+
+    } else if(id == 157 && mList[163-1].status == whichPlayer && mList[169-1].status == whichPlayer){
+
+    } else if(id == 157 && mList[79-1].status == whichPlayer && mList[1-1].status == whichPlayer){
+//14
+    } else if(id == 29 && mList[81-1].status == whichPlayer && mList[133-1].status == whichPlayer){
+
+    } else if(id == 29 && mList[33-1].status == whichPlayer && mList[37-1].status == whichPlayer){
+
+    } else if(id == 33 && mList[29-1].status == whichPlayer && mList[37-1].status == whichPlayer){
+
+    } else if(id == 33 && mList[7-1].status == whichPlayer && mList[59-1].status == whichPlayer){
+
+    } else if(id == 37 && mList[33-1].status == whichPlayer && mList[29-1].status == whichPlayer){
+
+    } else if(id == 37 && mList[89-1].status == whichPlayer && mList[141-1].status == whichPlayer){
+
+    } else if(id == 89 && mList[37-1].status == whichPlayer && mList[141-1].status == whichPlayer){
+
+    } else if(id == 89 && mList[87-1].status == whichPlayer && mList[91-1].status == whichPlayer){
+
+    } else if(id == 141 && mList[89-1].status == whichPlayer && mList[37-1].status == whichPlayer){
+
+    } else if(id == 141 && mList[137-1].status == whichPlayer && mList[133-1].status == whichPlayer){
+
+    } else if(id == 137 && mList[141-1].status == whichPlayer && mList[133-1].status == whichPlayer){
+
+    } else if(id == 137 && mList[111-1].status == whichPlayer && mList[163-1].status == whichPlayer){
+
+    } else if(id == 133 && mList[137-1].status == whichPlayer && mList[141-1].status == whichPlayer){
+
+    } else if(id == 133 && mList[81-1].status == whichPlayer && mList[29-1].status == whichPlayer){
+
+    } else if(id == 81 && mList[133-1].status == whichPlayer && mList[29-1].status == whichPlayer){
+
+    } else if(id == 81 && mList[79-1].status == whichPlayer && mList[83-1].status == whichPlayer){
+    //16
+    } else if(id == 57 && mList[83-1].status == whichPlayer && mList[109-1].status == whichPlayer){
+
+    } else if(id == 57 && mList[59-1].status == whichPlayer && mList[61-1].status == whichPlayer){
+
+    } else if(id == 59 && mList[57-1].status == whichPlayer && mList[61-1].status == whichPlayer){
+
+    } else if(id == 59 && mList[33-1].status == whichPlayer && mList[7-1].status == whichPlayer){
+
+    } else if(id == 61 && mList[59-1].status == whichPlayer && mList[57-1].status == whichPlayer){
+
+    } else if(id == 61 && mList[87-1].status == whichPlayer && mList[113-1].status == whichPlayer){
+
+    } else if(id == 87 && mList[61-1].status == whichPlayer && mList[113-1].status == whichPlayer){
+
+    } else if(id == 87 && mList[89-1].status == whichPlayer && mList[91-1].status == whichPlayer){
+
+    } else if(id == 113 && mList[87-1].status == whichPlayer && mList[61-1].status == whichPlayer){
+
+    } else if(id == 113 && mList[111-1].status == whichPlayer && mList[109-1].status == whichPlayer){
+
+    } else if(id == 111 && mList[109-1].status == whichPlayer && mList[113-1].status == whichPlayer){
+
+    } else if(id == 111 && mList[137-1].status == whichPlayer && mList[163-1].status == whichPlayer){
+
+    } else if(id == 109 && mList[111-1].status == whichPlayer && mList[113-1].status == whichPlayer){
+
+    } else if(id == 109 && mList[83-1].status == whichPlayer && mList[57-1].status == whichPlayer){
+
+    } else if(id == 83 && mList[57-1].status == whichPlayer && mList[109-1].status == whichPlayer){
+
+    } else if(id == 83 && mList[81-1].status == whichPlayer && mList[79-1].status == whichPlayer){
+
+    }
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -288,18 +395,18 @@ class _PlayGameState extends State<PlayGame> {
               crossAxisCount: 13,
               childAspectRatio: 1.0,
             ),
-            itemCount: buttonList.length,
+            itemCount: mList.length,
             itemBuilder: (context, i) => SizedBox(
               width: 10.0,
               height: 10.0,
               child: GestureDetector(
                 child: new Container(
                   child: new Image.asset(
-                    buttonList[i].bgImage,
+                    mList[i].bgImage,
                     fit: BoxFit.fill,
                   ),
                 ),
-                onTap: () => playGame(buttonList[i]),
+                onTap: () => playGame(mList[i]),
               ),
             ),
           ),
@@ -335,4 +442,5 @@ class _PlayGameState extends State<PlayGame> {
       ),
     )));
   }
+
 }
