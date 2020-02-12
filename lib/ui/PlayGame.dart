@@ -347,7 +347,7 @@ class _PlayGameState extends State<PlayGame> {
     } else if(id == 83 && mList[57-1].status == whichPlayer && mList[109-1].status == whichPlayer){
 
     } else if(id == 83 && mList[81-1].status == whichPlayer && mList[79-1].status == whichPlayer){
-
+//final
     }
 
   }
